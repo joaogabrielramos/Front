@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><img src="https://fontmeme.com/permalink/200728/4eb698a68a176b15dc02082ebc5c3314.png" ></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm)">
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input formControlName="email" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input formControlName="password" type="password"></ion-input>
+    </ion-item>
+    <ion-radio-group formControlName="check">
+      <ion-list-header>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Locador</ion-label>
+        <ion-radio slot="start" value="Locador"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Locatário</ion-label>
+        <ion-radio slot="start" value="Locatário"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+    <ion-row class="ion-justify-content-center">
+      <ion-button type="submit" color="danger" shape="round" [disabled]="loginForm.invalid">Entrar</ion-button>
+    </ion-row>
+
+  </form>
+    
+</ion-content>

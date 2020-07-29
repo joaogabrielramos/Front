@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      <img src="https://fontmeme.com/permalink/200728/4eb698a68a176b15dc02082ebc5c3314.png">
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,45 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+     
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <form [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm)">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nome do usuário</ion-label>
+       <ion-input type="text"  formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Telefone</ion-label>
+        <ion-input type="text" formControlName="phone" [brmasker]="{phone:true}"></ion-input>
+      </ion-item>
+      <ion-list>
+        <ion-radio-group formControlName="status">
+          <ion-list-header>
+          </ion-list-header>
+          <ion-item>
+            <ion-label>Locador</ion-label>
+            <ion-radio slot="start" value="Locador"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Locatário</ion-label>
+            <ion-radio slot="start" value="Locatário"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+      <ion-row class="ion-justify-content-center">
+        <ion-button type="submit" color="danger" shape="round" [disabled]="registerForm.invalid">Cadastrar</ion-button>
+      </ion-row>
+    </ion-list>
+  </form>
+ 
 </ion-content>

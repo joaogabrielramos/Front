@@ -1,0 +1,23 @@
+ion-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ion-title img{
+    margin-left: 120px;
+
+}
+ion-toolbar{
+    --background:#f4f5f6;
+}
+ion-input{
+    border-radius: 10px;
+}
+ion-button{
+    --color:--primary;
+
+    font-size: 16px;
+    text-transform: unset;
+    --border-radius: 10px;
+}
+
